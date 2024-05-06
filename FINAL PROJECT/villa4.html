@@ -1,0 +1,153 @@
+<html>
+
+<head>
+    <script src="aframe.min.js"></script>
+    <script src="./aframe.js"></script>
+    <script src="./ada-water.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villa4.1</title>
+</head>
+
+<body>
+
+    <script>
+        document.querySelector("a-water").setAttribute("animation", {
+            property: "scale",
+            // from: "10 2 1",
+            // to: "2 15 2",
+            dur: 50,
+            loop: true,
+            dir: "alternate",
+            easing: "easeOutElastic",
+        });
+    </script>
+    <a-scene light="defaultLightsEnabled: false">
+
+        <a-camera position="-10.11346 1.385 60.815" cursor-visible="true" cursor-opacity="1.5" camera="" rotation="" look-controls="" wasd-controls="" data-aframe-inspector-original-camera="" visible="false" rotation="600 0 0">
+
+        </a-camera>
+        <!--floor-->
+        <a-assets>
+            <img id="floor-3" src="IMAGES/download (3).jpeg">
+            <img id="floor-t" src="IMAGES/grass.jpg">
+        </a-assets>
+
+        <!---ground--->
+        <a-sound src="src: url(wtf.acc)" autoplay="true" position="0 2 5"></a-sound>
+        <a-plane src="#floor-t" material="color:#ffffff;
+                       
+                       normal-map:#floor-3;
+                       normal-texture-repeat:500 500;
+                       repeat: 100 100;
+                       scale:5000 5000" rotation="-90 0 0" scale="5 5 0" position="1 -10 0" width="500" height="500">
+        </a-plane>
+        <a-plane src="#floor-t" material="color: #ffffff; repeat: 100 100; normalMap: [object HTMLImageElement]; normalTextureRepeat: 500 500" rotation="-90 0 0" scale="5 5 0.00001" position="1 -2.28567 0" width="500" height="500" geometry="">
+        </a-plane>
+
+        <!---sky--->
+        <a-sky src="IMAGES/8-sunset-over-water-focusstock.jpg" material="
+                       normal-map:#floor-t;
+                       normal-texture-repeat:100 500;" position="0 -10 0">
+            <a-entity light="type: ambient; intensity: 0.8"></a-entity>
+
+        </a-sky>
+
+        <!--pool-->
+        <!--bottom-->
+        <a-water opacity="40" side="double" width="5" height="4" base-color="lightblue" foam-color="blue" repeat="2" voronoi-points="10" rotation="90 91 0" position="-1 -1.7 -3.5">
+        </a-water>
+
+
+
+
+
+
+
+        <!--house-->
+        <a-asset-item id="house" src="/summer_villa.glb" response-type="arraybuffer"></a-asset-item>
+        <a-entity gltf-model="#house" scale="1 1 1 " position=" 0 -4 0" rotation="0 90 0"></a-entity>
+
+        <!--top lights-->
+        <a-entity position="-3 0 0">
+            <a-sphere position="6 5 13" radius="0.1">
+
+                <a-light type="point" decay="2" intensity="7" position="0 -0.6 0" distance="4"></a-light>
+
+            </a-sphere>
+
+            <a-sphere position="1 5 13" radius="0.1">
+
+                <a-light type="point" decay="2" intensity="7" position="0 -0.6 0" distance="4"></a-light>
+            </a-sphere>
+            <a-sphere position="-5.9 5 14.8" radius="0.1">
+                <a-light type="point" decay="2" intensity="7" position="0 -0.6 0" distance="4"></a-light>
+
+            </a-sphere>
+            <a-sphere position="-10.3 5 14.8" radius="0.1">
+                <a-light type="point" decay="2" intensity="7" position="0 -0.6 0" distance="4"></a-light>
+
+            </a-sphere>
+            <a-sphere position="-12.7 5 15.8" radius="0.1">
+                <a-light type="point" decay="2" intensity="7" position="0 -0.6 0" distance="4"></a-light>
+
+            </a-sphere>
+            <a-sphere position="-16.7 5 12.8" radius="0.1">
+                <a-light type="point" decay="2" intensity="7" position="0 -0.6 0" distance="4"></a-light>
+
+            </a-sphere>
+            <a-sphere position="-16.7 5 9.8" radius="0.1">
+                <a-light type="point" decay="2" intensity="7" position="0 -0.6 0" distance="4"></a-light>
+
+            </a-sphere>
+            <a-sphere position="-16.7 5 7" radius="0.1">
+                <a-light type="point" decay="2" intensity="7" position="0 -0.6 0" distance="4"></a-light>
+
+            </a-sphere>
+            <a-sphere position="-16.3 5 2 " radius="0.1">
+                <a-light type="point" decay="2" intensity="7" position="0 -0.6 0" distance="4"></a-light>
+            </a-sphere>
+            <a-sphere position="-16.3 5  -2 " radius="0.1">
+                <a-light type="point" decay="2" intensity="7" position="0 -0.6 0" distance="4"></a-light>
+
+            </a-sphere>
+            <!--bottom lights -->
+            <a-sphere position="11 1.56 13" radius="0.1">
+
+                <a-light type="point" decay="2" intensity="7" position="0 -0.6 0" distance="4"></a-light>
+
+            </a-sphere>
+
+            </a-sphere>
+            <a-sphere position="-1.9 1.56 14.8" radius="0.1">
+                <a-light type="point" decay="2" intensity="7" position="0 -0.6 0" distance="4"></a-light>
+
+            </a-sphere>
+            <a-sphere position="-10.3 1.56 14.8" radius="0.1">
+                <a-light type="point" decay="2" intensity="7" position="0 -0.6 0" distance="4"></a-light>
+
+            </a-sphere>
+            <a-sphere position="-12.7 1.56 15.8" radius="0.1">
+                <a-light type="point" decay="2" intensity="7" position="0 -0.6 0" distance="4"></a-light>
+
+            </a-sphere>
+
+
+            <a-sphere position="-9.7 1.56 2 " radius="0.1 ">
+                <a-light type="point " decay="2 " intensity="7 " position="0 -0.6 0 " distance="4 "></a-light>
+            </a-sphere>
+
+
+            <a-sphere position="-16.3 1.56 2 " radius="0.1 ">
+                <a-light type="point " decay="2 " intensity="7 " position="0 -0.6 0 " distance="4 "></a-light>
+            </a-sphere>
+            <a-sphere position="-14.3 1.56 -3 " radius="0.1 ">
+                <a-light type="point " decay="2 " intensity="7 " position="0 -0.6 0 " distance="4 "></a-light>
+
+            </a-sphere>
+
+        </a-entity>
+    </a-scene>
+</body>
+
+</html>
